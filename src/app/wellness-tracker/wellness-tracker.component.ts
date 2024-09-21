@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-wellness-tracker',
@@ -60,13 +61,37 @@ export class WellnessTrackerComponent {
     this.showLogin = false;
   }
 
+  // onSubmit() {
+  //   // Handle login logic here
+  //   console.log('Login submitted:', this.email, this.password);
+  // }
+
+  // onSignupSubmit() {
+  //   // Handle signup logic here
+  //   console.log('Signup submitted:', this.signupData);
+  // }
+
+
+  //edited code
+  constructor(private router: Router) {}
+
   onSubmit() {
-    // Handle login logic here
-    console.log('Login submitted:', this.email, this.password);
+    // Dummy authentication logic
+    if (this.email === 'user@example.com' && this.password === 'password') {
+      console.log('Login successful');
+      this.router.navigate(['/dashboard']);
+    } else {
+      console.log('Login failed');
+      // Handle login failure (e.g., show error message)
+    }
   }
 
   onSignupSubmit() {
-    // Handle signup logic here
+    // Dummy signup logic
     console.log('Signup submitted:', this.signupData);
+    // Assuming signup is always successful for this example
+    this.router.navigate(['/dashboard']);
   }
+
+
 }
