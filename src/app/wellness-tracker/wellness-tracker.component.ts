@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-wellness-tracker',
   standalone: true,
@@ -92,6 +93,24 @@ export class WellnessTrackerComponent {
     // Assuming signup is always successful for this example
     this.router.navigate(['/dashboard']);
   }
+  
+
+ 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
