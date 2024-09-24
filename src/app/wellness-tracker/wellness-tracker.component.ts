@@ -92,6 +92,22 @@ export class WellnessTrackerComponent {
     // Assuming signup is always successful for this example
     this.router.navigate(['/dashboard']);
   }
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

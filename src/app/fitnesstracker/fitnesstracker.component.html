@@ -1,0 +1,30 @@
+<div class="fitness-tracker-container">
+    <h1>Fitness Tracker</h1>
+    
+    <div class="exercises-container">
+      <label for="exercise">What exercises did you do today?</label>
+      <select id="exercise" [(ngModel)]="selectedExercise">
+        <option *ngFor="let exercise of exercises" [value]="exercise">{{ exercise }}</option>
+      </select>
+      
+      <label for="repetitions">How many times did you do it today?</label>
+      <input type="number" id="repetitions" [(ngModel)]="repetitions" min="0" max="500">
+    </div>
+    
+    <div class="calories-container">
+      <label for="calories">No. of calories burned today</label>
+      <input type="text" id="calories" [(ngModel)]="caloriesBurned">
+    </div>
+    
+    <div class="suggested-exercises-container">
+      <h2>List of exercises suggested for you</h2>
+      <ul>
+        <li *ngFor="let exercise of suggestedExercises">{{ exercise }}</li>
+      </ul>
+    </div>
+    
+    <div class="quotes-container">
+      <h2>Quotes</h2>
+      <p>{{ quote }}</p>
+    </div>
+  </div>
