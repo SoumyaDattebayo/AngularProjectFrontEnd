@@ -130,3 +130,7 @@ button:hover {
     z-index: 1;
 }
 
+.health-percentage
+{
+    font-size: 35px;
+}
