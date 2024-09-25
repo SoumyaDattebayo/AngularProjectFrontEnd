@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./page3.component.css']  
 })
 export class Page3Component {
-  
+  healthPercentage: number | null = null; // To store health percentage
+
   constructor(private router: Router) {}
 
   navigateToFitnessTracker() {
@@ -30,9 +31,8 @@ export class Page3Component {
   }
 
   generateReport() {
+    // Simulating fetching health percentage from backend
+    this.healthPercentage = Math.floor(Math.random() * 100); // Example percentage
     console.log('Generating health report...');
   }
-
-
- 
 }
