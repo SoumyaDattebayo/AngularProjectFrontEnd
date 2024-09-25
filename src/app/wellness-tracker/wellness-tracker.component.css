@@ -187,3 +187,15 @@
     color: var(--dark-green);
     font-weight: bold;
   }
+
+  .radio-group {
+    display: flex;
+    justify-content: flex-start; /* Aligns to the left */
+  }
+  
+  .radio-group label {
+    margin-right: 15px; /* Adds space between the labels */
+  }
+  
+  
+  

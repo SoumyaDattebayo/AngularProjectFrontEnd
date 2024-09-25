@@ -23,10 +23,17 @@
             <label for="weight">Weight (kg):</label>
             <input type="number" id="weight" [(ngModel)]="weight" name="weight" required>
           </div>
+         
+
           <div class="input-group">
-            <label for="age">Age:</label>
-            <input type="number" id="age" [(ngModel)]="age" name="age" required>
+            <label>Activity Level:</label>
+            <div class="radio-group">
+              <label><input type="radio" name="activityLevel" value="low" [(ngModel)]="signupData.activityLevel"> Low</label>
+              <label><input type="radio" name="activityLevel" value="medium" [(ngModel)]="signupData.activityLevel"> Medium</label>
+              <label><input type="radio" name="activityLevel" value="high" [(ngModel)]="signupData.activityLevel"> High</label>
+            </div>
           </div>
+          
           <button type="submit" class="calculate-button">CALCULATE</button>
         </form>
         <div *ngIf="bmi !== null" class="result">
