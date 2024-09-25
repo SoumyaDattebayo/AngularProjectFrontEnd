@@ -26,6 +26,12 @@ export class DiettrackerComponent {
     this.showDetails = true;
   }
 
+
+
+
+
+
+  
 }
 
 

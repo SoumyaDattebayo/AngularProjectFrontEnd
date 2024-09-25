@@ -1,31 +1,34 @@
-<!-- fitness-tracker.component.html -->
 <div class="fitness-tracker-container">
   <h1>Fitness Tracker</h1>
+
   <div class="exercises-container">
-    <h2>What exercises did you do today?</h2>
-    <div class="exercise-input" *ngFor="let exercise of exercises; let i = index">
-      <input type="text" [(ngModel)]="exercises[i].name" placeholder="Exercise Name">
-      <input type="number" [(ngModel)]="exercises[i].count" placeholder="Number of Times">
+    <h2>What exercise did you do today?</h2>
+    <div class="exercise-input">
+      <select [(ngModel)]="exercises[0].name">
+        <option value="" disabled selected>Select an exercise</option>
+        <option *ngFor="let exercise of exerciseOptions" [value]="exercise">{{ exercise }}</option>
+      </select>
+      <input type="number" [(ngModel)]="exercises[0].count" placeholder="Enter duration in minutes" />
     </div>
-    <button (click)="addExercise()">Add Exercise</button>
     <button (click)="submitExercises()">Submit</button>
   </div>
-  <div class="details-container" *ngIf="showDetails">
-    <div class="calories-container">
-      <h2>No. of calories burned today:</h2>
-      <input type="number" [(ngModel)]="caloriesBurned">
+
+  <div class="calories-container">
+    <h2>No. of calories burned</h2>
+    <input type="number" [(ngModel)]="caloriesBurned" />
+  </div>
+
+  <div class="exercises-suggested-container" *ngIf="showDetails">
+    <h2>List of exercises suggested for you:</h2>
+    <div class="exercises-suggested" [ngStyle]="{'font-size': '20px'}">
+      Text goes here...
     </div>
-    <div class="exercises-suggested-container">
-      <div class="exercises-suggested">
-        <h2>List of exercises suggested for you:</h2>
-        <p>Text goes here...</p>
-      </div>
-      <div class="quotes-container">
-        <h2>Quotes:</h2>
-        <ul>
-          <li *ngFor="let quote of quotes">{{ quote }}</li>
-        </ul>
-      </div>
+  </div>
+
+  <div class="quotes-container" *ngIf="showDetails">
+    <h2>Quote:</h2>
+    <div [ngStyle]="{'font-size': '24px'}">
+      {{ quotes[0] }}
     </div>
   </div>
 </div>

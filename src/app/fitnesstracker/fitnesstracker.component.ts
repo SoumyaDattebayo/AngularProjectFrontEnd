@@ -10,6 +10,14 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './fitnesstracker.component.css'
 })
 export class FitnesstrackerComponent {
+  exerciseOptions: string[] = [
+    'Walking', 'Football', 'Running', 'Swimming', 'Cycling', 
+    'Yoga', 'Jumping Rope', 'Basketball', 'Tennis', 'Boxing', 
+    'Dancing', 'Martial Arts', 'Golf', 'Aerobics', 
+    'Pushups', 'Volleyball', 'Badminton', 'Table Tennis', 
+    'Gymnastics', 'Cricket', 'Body Building'
+  ];
+  
   exercises: { name: string; count: number }[] = [
     { name: '', count: 0 }
   ];
@@ -17,13 +25,10 @@ export class FitnesstrackerComponent {
   quotes: string[] = ['Motivational Quote 1', 'Motivational Quote 2', 'Motivational Quote 3'];
   showDetails: boolean = false;
 
-  addExercise() {
-    this.exercises.push({ name: '', count: 0 });
-  }
-
   submitExercises() {
     // Logic to submit the exercises
     this.showDetails = true;
   }
+  
 }
 
